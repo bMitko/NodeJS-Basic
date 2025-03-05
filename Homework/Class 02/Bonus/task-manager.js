@@ -1,8 +1,8 @@
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
-import { error } from 'console';
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
+import randomEmail from 'random-email';
 
 // Fix __dirname and __filename
 const ___filename = fileURLToPath(import.meta.url);
@@ -31,6 +31,7 @@ export function createTask(title, description) {
 		description,
 		completed: false,
 		createdAt: new Date().toISOString(), // 12/12/2025
+		owner: randomEmail()
 	};
 
 	tasks.push(newTask);
@@ -78,19 +79,6 @@ export function markTaskAsCompleted(id){
 	}
 
 	tasks[taskIndex].completed = true;
-
-	fs.writeFileSync(tasksFile, JSON.stringify(tasks, null, 2));
-}
-
-export function addOwner(id, email){
-	const tasks = readAllTasks();
-	const taskIndex = tasks.findIndex(task => task.id === id)
-
-	if(taskIndex < 0){
-		throw new error (`Task with ${id} not found.`)
-	}
-
-	tasks[taskIndex].owner = email;
 
 	fs.writeFileSync(tasksFile, JSON.stringify(tasks, null, 2));
 }

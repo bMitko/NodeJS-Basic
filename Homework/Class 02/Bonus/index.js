@@ -1,11 +1,9 @@
-import { markAsUncloneable } from 'worker_threads';
 import {
 	createTask,
 	readAllTasks,
 	updateTask,
 	deleteTask,
     markTaskAsCompleted,
-    addOwner,
     getTasksByOwner,
     deleteAll,
 } from './task-manager.js';
@@ -30,18 +28,13 @@ function main() {
 
     // markTaskAsCompleted("67390fb1-4244-427c-ad15-99afd56e8c1b")
 
-    console.log('All tasks:', readAllTasks());
+    // console.log('All tasks:', readAllTasks());
 
-    addOwner("67390fb1-4244-427c-ad15-99afd56e8c1b", "some@mail.com")
-    addOwner("22a566bd-9be6-475c-a82f-498ac793e301", "some@mail.com")
-
-    console.log('All tasks:', readAllTasks());
-
-    getTasksByOwner("some@mail.com")
+    getTasksByOwner("zijkij@maak.tips")
 
     // deleteAll()
 
-    console.log('All tasks:',  readAllTasks())
+    // console.log('All tasks:',  readAllTasks())
 }
 
 main();

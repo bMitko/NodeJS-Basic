@@ -15,6 +15,7 @@
     "nodemon": "^3.1.9"
   },
   "dependencies": {
+    "random-email": "^1.0.3",
     "uuid": "^11.1.0"
   }
 }
