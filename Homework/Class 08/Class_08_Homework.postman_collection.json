@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "aadf1fe3-a17a-4ba2-9142-4e35bfcaf07e",
+		"name": "Class_08_Homework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43182315",
+		"_collection_link": "https://blue-rocket-820952.postman.co/workspace/Team-Workspace~01176ac4-e6d2-4364-8d05-c7381724543d/collection/43182315-aadf1fe3-a17a-4ba2-9142-4e35bfcaf07e?action=share&source=collection_link&creator=43182315"
+	},
+	"item": [
+		{
+			"name": "All recipes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recipe by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/recipes/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67e1ed91ac3cee95c83be357"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New recipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Oatmeal\",\r\n    \"description\": \"Healthy breakfast\",\r\n    \"ingrediants\": [\"oats\", \"milk\", \"bannana\", \"peanut butter\"],\r\n    \"instructions\": [\"Mix all the ingreadiants\",\r\n                    \"Put it in fridge overnight\"],\r\n    \"difficulty\": \"easy\",\r\n    \"category\": \"breakfast\",\r\n    \"isVegeterian\": false,\r\n    \"cookingTime\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Uprate recipe",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"instructions\": [\"Put one layer of potatos\",\r\n                    \"Put one layer of meat\",\r\n                    \"Repeat untill you run out of ingrediants and bake\"],\r\n    \"category\": \"lunch\",\r\n    \"difficulty\": \"easy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/recipes/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67e1e5fdc457d9c62cf5153d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete recipe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/recipes/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67e1d6aca01699e86c061672"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recipe by category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/recipes/category/:category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes",
+						"category",
+						":category"
+					],
+					"variable": [
+						{
+							"key": "category",
+							"value": "dinner"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search recipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/recipes/query/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes",
+						"query",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
